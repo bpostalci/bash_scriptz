@@ -1,0 +1,43 @@
+There are services that can be enabled/disabled using the GUI (like the startup application) or the terminal.
+
+For the Terminal you have several options. First, open a terminal (Type "terminal" in the dash, for example, and open it). Then:
+
+Temporary enabling/disabling services
+To stop and start services temporarily (Does not enable / disable them for future boots), you can type  service SERVICE_NAME. For example:
+
+sudo service apache2 stop (Will STOP the Apache service until Reboot or until you start it again).
+
+sudo service apache2 start (Will START the Apache service assuming it was stopped before.).
+
+service apache2 status (Will tell you the STATUS of the service, if it is either enabled/running of disabled/NOT running.).
+
+sudo service apache2 restart (Will RESTART the service. This is most commonly used when you have changed, a config file. In this case, if you changed either a PHP configuration or an Apache configuration. Restart will save you from having to stop/start with 2 command lines)
+
+service apache2 (In this case, since you did not mention the ACTION to execute for the service, it will show you all options available for that specific service.) This aspect varies depending on the service, for example, with MySQL it would only mention that it is missing a parameter. For other services like networking service it would mention the small list of all options available.
+
+SYSTEMD
+Starting with Ubuntu 15.04, Upstart will be deprecated in favor of Systemd. With Systemd to manage the services we can do the following:
+
+systemctl start SERVICE - Use it to start a service. Does not persist after reboot
+
+systemctl stop SERVICE - Use it to stop a service. Does not persist after reboot
+
+systemctl restart SERVICE - Use it to restart a service
+
+systemctl reload SERVICE - If the service supports it, it will reload the config files related to it without interrupting any process that is using the service.
+
+systemctl status SERVICE - Shows the status of a service. Tells whether a service is currently running.
+
+systemctl enable SERVICE - Turns the service on, on the next reboot or on the next start event. It persists after reboot.
+
+systemctl disable SERVICE - Turns the service off on the next reboot or on the next stop event. It persists after reboot.
+
+systemctl is-enabled SERVICE - Check if a service is currently configured to start or not on the next reboot.
+
+systemctl is-active SERVICE - Check if a service is currently active.
+
+systemctl show SERVICE - Show all the information about the service.
+
+sudo systemctl mask SERVICE - Completely disable a service by linking it to /dev/null; you cannot start the service manually or enable the service.
+
+sudo systemctl unmask SERVICE - Removes the link to /dev/null and restores the ability to enable and or manually start the service.

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+del="--------------------------"
+per=.7
+reg="\.[1-9]"
+
+if [[ "$1" =~ $reg ]]; 
+then
+	per=$1
+fi
+
+while [ 1 ];
+do
+	clear
+	echo -e "$del"
+	out=$(cat /proc/cpuinfo | grep "MHz")
+	echo -e "$out"
+	echo -e "$del"
+	sleep "$per" 
+done
+

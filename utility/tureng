@@ -1,0 +1,7 @@
+#!/bin/bash
+
+read -p "Search: " search
+var=`echo $search | sed 's/ /%20/g'`
+xdg-open http://tureng.com/en/turkish-english/$var
+
+exit 0;

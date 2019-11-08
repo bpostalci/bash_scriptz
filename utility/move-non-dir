@@ -1,0 +1,12 @@
+#!/bin/bash
+
+to=$1
+
+echo "All non-directory files moving to $to..."
+for x in *; do
+    if ! [ -d "$x" ]; then
+	mv -- "$x" "$to"
+	echo "$x"
+    fi
+done
+echo "move done..."

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+lib=~/lib
+latest="3.3.9"
+name="grails-"
+
+if [ -z "$1" ]; then
+	version="$latest"
+else
+	version="$1"
+fi
+
+exe="$lib/$name$version/bin/grails"
+echo "$exe"
+
+if [ -x "$exe" ]; then
+	"$exe"
+else
+	echo -e "no such file or not have permission to execute file..."
+fi

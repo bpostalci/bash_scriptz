@@ -1,0 +1,24 @@
+#!/bin/bash
+
+file="$1"
+filename=$(basename "$file")
+ext="${filename##*.}"
+newFileName="${filename}.enc"
+
+if [ -z $file ]; then
+	echo -e "no input files..."
+	exit 1
+fi
+if [ -f $file ]; then
+	echo -e "new file name => $newFileName"
+	$(openssl aes-256-ctr -a -salt -in $file -out $newFileName)
+	message="encrypting $file ... " 
+	echo -e $message
+elif [ -d $file ]; then
+	str="$file$.tar" 
+	$(tar -xzvf "file{*.}tar ")
+	exit 0
+else
+	echo -e "no such file or directory..."
+	exit 1
+fi

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+read -p "Search: " search;
+
+var=`echo $search | sed 's/ /+/g'`
+xdg-open https://www.google.com/search?q=$var&oq=$var&gs_l=serp.3..0i71k1l8.0.0.0.9710.0.0.0.0.0.0.0.0..0.0....0...1c..64.serp..0.0.0.xUSHcudxwQg&gws_rd=cr&ei=_TR4WJW4HILpapLap4AO
+
+exit 0;

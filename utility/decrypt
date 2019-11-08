@@ -1,0 +1,23 @@
+#!/bin/bash
+file="$1"
+if [ -z $file ]; then
+	echo -e "no file input..."
+	exit 1
+fi
+if { [ ! -f $file ] && [ ! -d $file ]; }; then
+		echo -e "no such file or directory..."
+		exit 1
+else
+	filename=$(basename "$file")
+	ext="${filename##*.}"
+	if [ $ext == "enc" ]; then
+		newFileName="${filename%.*}"
+		echo -e "new file name => $newFileName"
+		$(openssl aes-256-ctr -d -a -in $file -out $newFileName)
+		message="decrypting $file ... " 
+		echo -e $message
+	else
+		echo -e "file's extension must be '.enc' ..."
+		exit 1
+	fi
+fi
