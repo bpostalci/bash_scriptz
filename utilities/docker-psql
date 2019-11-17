@@ -1,0 +1,14 @@
+#!/bin/bash
+
+name = $1
+echo "container name: $name"
+tag = $2
+echo "tag name: $tag"
+ext_port = $3
+echo "external port: $ext_port"
+int_port = $4
+echo "internal post: $int_port"
+passwd = $5
+echo "password: $passwd"
+
+docker run --rm --name pg-docker -e POSTGRES_PASSWORD=$passwd -d -p $ext_port:$int_port -v $HOME/docker/volumes/postgres:/var/lib/postgresql/data postgres:9.6.15
