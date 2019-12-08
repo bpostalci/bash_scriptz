@@ -36,7 +36,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 syntax on
-colorscheme wombat
+colorscheme molokai 
 
 " Change default tab indent
 set number
