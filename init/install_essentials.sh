@@ -11,6 +11,7 @@ declare -a APT_APPS=(
 "build-essential" 
 "redshift-gtk"
 "python3-pip"
+"htop"
 )
 
 declare -a SNAP_APPS=(
