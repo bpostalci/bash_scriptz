@@ -14,6 +14,7 @@ declare -a APT_APPS=(
 "htop"
 "xclip"
 "npm"
+"libstdc++-10-doc"
 )
 
 declare -a SNAP_APPS=(
