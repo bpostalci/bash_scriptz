@@ -12,6 +12,8 @@ declare -a APT_APPS=(
 "redshift-gtk"
 "python3-pip"
 "htop"
+"xclip"
+"npm"
 )
 
 declare -a SNAP_APPS=(
@@ -21,6 +23,10 @@ declare -a SNAP_APPS=(
 
 declare -a PYTHON_APPS=(
 "thefuck"
+)
+
+declare -a NPM_APPS=(
+"tldr"
 )
 
 apt-get update
@@ -36,4 +42,8 @@ done
 
 for app in "${PYTHON_APPS[@]}";do
 	pip3 install "$app"
+done
+
+for app in "${NPM_APPS[@]}";do
+	npm install --global "$app"
 done
