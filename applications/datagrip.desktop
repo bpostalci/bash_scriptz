@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Datagrip
+Icon=/home/instantcrush/applications/IDEs/DataGrip-2020.1.3/bin/datagrip.png
+Exec="/home/instantcrush/applications/IDEs/DataGrip-2020.1.3/bin/datagrip.sh" %f
+Comment=A database management tool
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=datagrip

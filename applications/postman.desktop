@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Postman
+Icon=/home/instantcrush/applications/Postman/app/resources/app/assets/icon.png
+Exec="/home/instantcrush/applications/Postman/Postman" %f
+Comment=A network tool
+Categories=Development;Network;
+Terminal=false
+StartupWMClass=postman
