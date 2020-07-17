@@ -3,7 +3,7 @@
 #
 A simple script to track remaining files to be generated.
 [file_pattern]: File pattern regex to determine which files to observe.
-[num_of_files]:  Number of files  to be generated (if it is not known an approximate number can be given), and [update_seconds]: To be used to periodically check progress.
+[num_of_files]:  Number of files  to be generated (if it is not known an approximate number can be given), and [update_seconds]: To periodically check progress.
 
 # Example
 Generation of object files with make command. I assume there are 2000 files to be generated. 
